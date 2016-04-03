@@ -1,0 +1,38 @@
+I. File list
+------------
+DataExtractor.java              The data getter class that collects data and picks the top topics
+NameExtractor.java              Extract names phrases from a sentence using OpenNLP
+NounExtractor.java              Extract noun phrases from a sentence using OpenNLP
+SiteData.java                   A model holding the site's key strings
+Assignment.java                 The Handler class
+pom.xml                         Maven dependencies
+
+II. Design
+----------
+A. Program design
+
+The program is handled by the Assignment class - it reads the HTML file into a document and then calls on the execution
+and receives the results from DataExtractor upon the read document.
+DataExtractor read significant and important tags that could hold important and relevant info about the page such as
+the titles and meta tags and stores it in an object named SiteData.
+NounExtractor and NameExtractor receive strings from DataExtractor and they extract nouns and names from these
+strings using OpenNlp.
+DataExtractor calculates which ones appear most. The top results are sent back as a List of strings to Assignment where
+they are displayed.
+The design is expandable as we can add more OpenNlp libraries (any type and in any language) to the resources file
+in order to get different results.
+
+III. How to run the code
+------------------------------
+In main project folder (where pom.xml file is) run:
+
+mvn clean compile assembly:single
+cd target/
+java -jar Assignment-1.0-SNAPSHOT-jar-with-dependencies.jar "http://www.XXXX.XXX"
+
+
+Where "http://www.XXXX.XXX" can be any URL.
+
+IV. Known issues
+------------------------------
+Connectivity issue to Amazon, but Ebay works fine :)
