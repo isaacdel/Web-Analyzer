@@ -32,7 +32,3 @@ java -jar Assignment-1.0-SNAPSHOT-jar-with-dependencies.jar "http://www.XXXX.XXX
 
 
 Where "http://www.XXXX.XXX" can be any URL.
-
-IV. Known issues
-------------------------------
-Connectivity issue to Amazon, but Ebay works fine :)
